@@ -1,148 +1,231 @@
 @font-face {
-    font-family: 'poppinsRegular';
-    src: url(../fonts/Poppins-Regular.otf);
+  font-family: "poppinsRegular";
+  src: url(../fonts/Poppins-Regular.otf);
 }
 
 :root {
-    --color-background: #f5f5ef;
-    --color-black: rgb(37, 37, 37);
-    --color-text: #4f4f4f;
-    --color-text-out: #90908e;
-    --color-primary: #513884;
-    --color-secundary: #f7a813;
-    --color-white: #ffff;
-    --color-red: #e74c3c;
-    --color-green: #2ecc71;
-    --color-separate: #cccccc;
+  --color-background: #f5f5ef;
+  --color-black: rgb(37, 37, 37);
+  --color-text: #4f4f4f;
+  --color-text-out: #90908e;
+  --color-primary: #513884;
+  --color-secundary: #f7a813;
+  --color-white: #ffff;
+  --color-red: #e74c3c;
+  --color-green: #2ecc71;
+  --color-separate: #cccccc;
 }
 
 html,
 body {
-    font-family: 'poppinsRegular', 'Rubik', sans-serif;
-    background-color: var(--color-background);
-    color: var(--color-text);
-
+  font-family: "poppinsRegular", "Rubik", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
-
-
 .bg-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 110px;
-    background-color: var(--color-primary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 110px;
+  background-color: var(--color-primary);
 }
 
 .width-fix {
-    width: calc(100% - 20px);
-    max-width: 800px;
-    margin: 0px auto;
+  width: calc(100% - 20px);
+  max-width: 800px;
+  margin: 0px auto;
 
-
-
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .card {
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 
-    height: 320px;
-    border-radius: 16px;
-    padding: 15px 20px;
-    font-size: 20px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) none !important;
+  height: 320px;
+  border-radius: 16px;
+  padding: 15px 20px;
+  font-size: 20px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1) none !important;
 }
 
 .container-img {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 12px;
-    background-image: url('/img/LogoNAV.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 12px;
+  background-image: url("/img/LogoNAV.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .infos h1 {
-    font-family: 'germania one', 'poppins', sans-serif;
-    font-size: 32px;
-    margin-bottom: 8px;
-    color: var(--color-black);
+  font-family: "germania one", "poppins", sans-serif;
+  font-size: 32px;
+  margin-bottom: 8px;
+  color: var(--color-black);
 }
 
 .infos-sub {
-    margin-bottom: 15px;
-    font-size: 16px;
+  margin-bottom: 15px;
+  font-size: 16px;
 }
 
 .status-open {
-    font-size: 14px;
-    margin-bottom: 0px;
+  font-size: 14px;
+  margin-bottom: 0px;
 
-    color: var(--color-green);
+  color: var(--color-green);
 }
 
 .status-open.closed {
-    font-size: 14px;
-    margin-bottom: 0px;
+  font-size: 14px;
+  margin-bottom: 0px;
 
-    color: var(--color-red);
+  color: var(--color-red);
 }
 
 .link {
-    text-decoration: none !important;
-    font-size: 14px;
-    font-weight: 600;
+  text-decoration: none !important;
+  font-size: 14px;
+  font-weight: 600;
 
-    color: var(--color-primary);
+  color: var(--color-primary);
 
-    display: inline-block;
+  display: inline-block;
 }
 
 section.categoria {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    padding-top: 15px;
-    width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  padding-top: 15px;
+  width: 100%;
 }
 
 .container-menu {
-    margin-bottom: 30px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    display: flex;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-left: 10px;
+  margin-bottom: 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 10px;
+  justify-content: flex-start;
+  white-space: nowrap;
+  scrollbar-width: none;
 }
 
-.container-menu img{
-    width: 16px;
-    align-items: center;
+.container-menu::-webkit-scrollbar {
+  display: none; 
+}
+
+.container-menu svg {
+  width: 16px;
+  align-items: center;
 }
 
 .item-categorias {
-    flex: none;
+
+  margin-right: 10px;
 }
 
 .btn-white {
-    color: var(--color-black);
-    background-color: var(--color-white);
-    border-radius: 20px;
-    padding: 15px 25px;
-    font-size: 16px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  border-radius: 20px;
+  padding: 15px 25px;
+  font-size: 16px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-white:hover,
+.btn-white.active {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.btn-white:hover svg,
+.btn-white.active svg {
+  fill: var(--color-background);
 }
 
 .btn-sm {
-    padding: 8px 13px;
-    border-radius: 14px;
-    font-size: 16px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.tittle-categoria {
+  color: var(--color-black);
+  margin-left: 5px;
+}
+
+.container-group {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte quando necessário */
+  justify-content: flex-start; /* Os itens começam à esquerda */
+  gap: 20px; /* Adiciona espaçamento entre os produtos */
+  margin-top: 20px; /* Para um pequeno espaçamento no topo */
+}
+
+.container-group .card {
+  flex: 1 1 45%;
+  width: 200px;
+  height: 320px;
+  padding: 8px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+
+  font-size: 12px;
+
+  box-sizing: border-box;
+}
+
+.container-img-produto {
+  width: 95%;
+  height: 160px;
+
+  border-radius: 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--color-text-out);
+
+}
+
+
+.infos-produto .name {
+  font-family: "germania one", "poppins", sans-serif;
+  font-size: 28px;
+
+  letter-spacing: 2px;
+
+
+  margin-bottom: -4px ;
+  color: var(--color-black);
+}
+
+.infos-produto .name {
+  color: var(--color-black);
+}
+
+.infos-produto .price {
+
+  font-family: "germania one", "poppins", sans-serif;
+  font-size: 28px;
+
+  margin-top: -12px;
+  margin-bottom: -4px;
+
+  color: var(--color-black);
 }

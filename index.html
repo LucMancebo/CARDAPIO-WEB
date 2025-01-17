@@ -1,73 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cardápio Icarus</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontawesome.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/fontawesome.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <div class="bg-top"></div>
 
     <header class="width-fix mt-5">
-        <div class="card">
-            <div class="container-img"></div>
-            <div class="d-flex">
-                <div class="infos">
-                    <h1><b>ICARUS HAMBURGUERIA</b></h1>
-                    <div class="infos-sub">
-                        <p class="status-open"><i class="fa fa-clock"></i> Aberta </p>
-
-                    </div>
-                    <a href="" class="link"> Ver mais</a>
-                </div>
-
+      <div class="card">
+        <div class="container-img"></div>
+        <div class="d-flex">
+          <div class="infos">
+            <h1><b>ICARUS HAMBURGUERIA</b></h1>
+            <div class="infos-sub">
+              <p class="status-open"><i class="fa fa-clock"></i> Aberta</p>
             </div>
-
+            <a href="" class="link"> Ver mais</a>
+          </div>
         </div>
+      </div>
     </header>
 
     <section class="categoria width-fix">
-        <div class="container-menu" id="listaCategorias">
+      <div class="container-menu" id="listaCategorias">
+        <a
+          href="#"
+          class="item-categoria btn btn-white btn-sm mb-3 me-3 active"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M61.1 224C45 224 32 211 32 194.9c0-1.9 .2-3.7 .6-5.6C37.9 168.3 78.8 32 256 32s218.1 136.3 223.4 157.3c.5 1.9 .6 3.7 .6 5.6c0 16.1-13 29.1-29.1 29.1L61.1 224zM144 128a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zm240 16a16 16 0 1 0 0-32 16 16 0 1 0 0 32zM272 96a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zM16 304c0-26.5 21.5-48 48-48l384 0c26.5 0 48 21.5 48 48s-21.5 48-48 48L64 352c-26.5 0-48-21.5-48-48zm16 96c0-8.8 7.2-16 16-16l416 0c8.8 0 16 7.2 16 16l0 16c0 35.3-28.7 64-64 64L96 480c-35.3 0-64-28.7-64-64l0-16z"
+            /></svg
+          >&nbsp; Hamburguer artesanal
+        </a>
 
-            <a href="#" class="item-categoria btn btn-white btn-sm mb-3 me-3">
-                <img src="/SVG/burger-solid.svg" alt="">&nbsp; Hamburguer
-            </a>
+        <a href="#" class="item-categoria btn btn-white btn-sm mb-3 me-3">
+          <svg
+            width="16"
+            viewBox="0 0 121 160"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M27.786 3.046C24.644 4.668 21.656 6.784 21.147 7.748C20 9.918 30.239 72.311 32.154 74.821C34.244 77.559 38.406 80.925 39.75 80.964C40.729 80.992 41 72.697 41 42.723C41 9.697 40.786 4.14 39.443 2.223C37.389 -0.710001 34.693 -0.52 27.786 3.046ZM51.511 2.342C50.185 4.366 50.012 10.101 50.238 44.592L50.5 84.5H60.5H70.5L70.762 47.207C70.935 22.58 70.668 9.248 69.975 7.952C68.774 5.709 58.061 0 55.052 0C53.949 0 52.356 1.054 51.511 2.342ZM88 11.645C84.975 12.45 81.938 13.845 81.25 14.745C80.31 15.977 80 24.384 80 48.691C80 84.502 79.841 83.77 86.27 77.526C90.35 73.563 89.941 75.115 96.441 39C101.987 8.185 101.912 7.944 88 11.645ZM1.674 27.138C0.292003 29.287 0.401002 30.854 2.877 44.5L5.6 59.5L12.147 59.792L18.694 60.084L15.999 43.994C14.516 35.144 12.898 27.498 12.402 27.003C11.906 26.508 9.631 25.804 7.347 25.439C3.695 24.855 3.01 25.061 1.674 27.138ZM111 25.893C108.643 26.548 108.347 27.446 105.825 41.544C102.173 61.961 101.839 60.151 109.2 59.798L115.401 59.5L118.123 44.5C120.543 31.163 120.685 29.251 119.399 27.25C117.93 24.963 115.668 24.598 111 25.893ZM2.944 71.844C1.474 73.035 0.691004 74.719 0.735004 76.594C0.773004 78.192 4.897 96.375 9.899 117C18.426 152.153 19.184 154.672 22.013 157.25L25.032 160H60.5H95.968L98.982 157.25C101.803 154.675 102.598 152.037 111.474 115.754C121.438 75.03 121.634 73.48 117.114 71.061C116.023 70.477 112.435 70 109.138 70C103.855 70 102.9 70.312 101.073 72.635C99.933 74.084 99 75.911 99 76.695C99 79.276 89.063 88.726 84.107 90.859C81.468 91.994 75.151 93.476 70.069 94.153C59.006 95.626 44.695 94.215 36.965 90.89C31.939 88.728 22 79.3 22 76.695C22 75.911 21.067 74.084 19.927 72.635C18.079 70.285 17.171 70 11.538 70C6.889 70 4.62 70.487 2.944 71.844Z"
+            /></svg
+          >&nbsp; Batata Frita
+        </a>
 
-            <a href="#" class="item-categoria btn btn-white btn-sm mb-3 me-3">
-               <img src="/SVG/Batata frita.svg" alt="">&nbsp; Batata Frita
-            </a>
-
-            <a href="#" class="item-categoria btn btn-white btn-sm mb-3 me-3">
-               <img src="/SVG/bebidas.svg" alt="">&nbsp; Bebidas
-            </a>
-
-            
-
-        </div>
-
-
+        <a href="#" class="item-categoria btn btn-white btn-sm mb-3 me-3">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M32 32c-9.3 0-18.1 4-24.2 11.1S-1 59.4 .3 68.6l50 342.9c5.7 39.3 39.4 68.5 79.2 68.5l253 0c39.7 0 73.4-29.1 79.2-68.5l50-342.9c1.3-9.2-1.4-18.5-7.5-25.5S489.3 32 480 32L32 32zM87.7 224L69 96l374 0L424.3 224 87.7 224z"
+            /></svg
+          >&nbsp; Bebidas
+        </a>
+      </div>
     </section>
 
+    <section class="lista width-fix mt-0 pb-5" id="listaItensCardapio">
+      <p class="title-categoria"><b>Hamburguer artesanal</b></p>
+      
+      <div class="container-group mb-5">
+        <div class="card mb-2 item-cardapio">
+          <div
+            class="container-img-produto"
+            style="
+              background-image: url('/img/calabresa.jpg');
+              background-size: cover;
+            "
+          ></div>
+          <div class="d-flex">
+            <div class="infos-produto">
+              <p class="name"><b>CAOS</b></p>
+              <p class="description">
+                Pão brioche, Blend 100g, Cheddar, Salada (alface, tomate,
+                cebola) e Maionese
+              </p>
+              <p class="price"><b>R$ 18,00</b></p>
+            </div>
+          </div>
+        </div>
 
+        <div class="card mb-2 item-cardapio">
+          <div
+            class="container-img-produto"
+            style="
+              background-image: url('/img/calabresa.jpg');
+              background-size: cover;
+            "
+          ></div>
+          <div class="d-flex">
+            <div class="infos-produto">
+              <p class="name"><b>CAOS</b></p>
+              <p class="description">
+                Pão brioche, Blend 100g, Cheddar, Salada (alface, tomate,
+                cebola) e Maionese
+              </p>
+              <p class="price"><b>R$ 18,00</b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section>
+      <section class="menu-bottom" id="menu"></section>
+    </section>
 
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="js/cardapio.js"></script>
-
-</body>
-
+  </body>
 </html>
