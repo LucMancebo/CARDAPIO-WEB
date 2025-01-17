@@ -173,12 +173,12 @@ section.categoria {
   display: flex;
   flex-wrap: wrap; /* Permite que os itens quebrem para a linha seguinte quando necessário */
   justify-content: flex-start; /* Os itens começam à esquerda */
-  gap: 20px; /* Adiciona espaçamento entre os produtos */
+  gap: 10px; /* Adiciona espaçamento entre os produtos */
   margin-top: 20px; /* Para um pequeno espaçamento no topo */
 }
 
 .container-group .card {
-  flex: 1 1 45%;
+  flex: 1 1 30%;
   width: 200px;
   height: 320px;
   padding: 8px;
