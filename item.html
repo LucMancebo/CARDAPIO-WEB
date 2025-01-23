@@ -55,7 +55,9 @@
                 
     </section>
 
-    <section class="options width-fix mt-5 pb-5">
+    <section class="options width-fix mt-5">
+
+      <!-- MAIONESE -->
 
       <div class="container-group mb-5">
         
@@ -101,11 +103,30 @@
 
         </div>
 
+        <div class="card card-options mt-2 bar">
+
+          <div class="info-produto-options">
+            <p class="name mb-0"><b>Sem maionese a parte</b></p>
+            <p class="price mb-0"><b></b></p>
+          </div>
+          
+
+          <div class="checks">
+            <label class="container-check">
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+        </div>
+
       </div>
+      
+      <!-- ADICIONAIS-->
 
       <div class="container-group mb-5">
         
-
+        
         <div class="span-card">
         <span class="badge"></span>
         <p class="title-categoria mb-2">Adicionais</p>
@@ -132,23 +153,40 @@
 
      
 
-      <div></div>
+      </div>
+
+      <!-- observações -->
+      <div class="container-group mb-5">
+
+        <div class="span-card">
+          <span class="badge"></span>
+          <p class="title-categoria mb-0">Observações</p>
+          <span class="sub-tittle-categoria">Informe alguma observação abaixo</span>
+
+          <textarea class="form-control mt-2" rows="4"></textarea>
+          </div>
+
+      </div>
+
     </section>
 
-    
 
+    <section class="menu-bottom details" id="menu-bottom">
+      <div class="add-carrinho">
+        <span class="btn-menos">
+          <i class="fas fa-minus"></i>
+        </span>
 
+        <span class="add-numero-itens">
+          2
+        </span>
+        <span class="btn-mais">
+          <i class="fas fa-plus"></i>
+        </span>
+      </div>
 
-    <section class="menu-bottom" id="menu-bottom">
-      <a class="menu-bottom-item">
-        <i class="fas fa-book-open"></i>&nbsp; Cardápio
-      </a>
-      <a class="menu-bottom-item">
-        <i class="fas fa-utensils"></i>&nbsp; Pedido
-      </a>
-      <a class="menu-bottom-item active">
-        <span class="badge-total-carrinho">2</span>
-        <!-- <i class="fas fa-shopping-cart"></i>-->&nbsp; Carrinho
+      <a class="btn btn-yellow btn-sm">
+        Adicionar &nbsp;<span>R$ 18,00</span>
       </a>
     </section>
 
@@ -158,6 +196,6 @@
     </section>
 
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="js/cardapio.js"></script>
+    <script type="text/javascript" src="js/item.js"></script>
   </body>
 </html>
