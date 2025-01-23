@@ -328,6 +328,13 @@ section.categoria {
 
 .card .d-flex.bar {
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.card.bar .d-flex {
+  display: flex;
   align-items: center;
   justify-content: flex-start;
   width: 100%;
