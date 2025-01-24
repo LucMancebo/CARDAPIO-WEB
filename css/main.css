@@ -189,7 +189,7 @@ section.categoria {
 .lista .container-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 16px;
   margin-top: 20px;
   
   justify-content: space-between;
@@ -318,8 +318,8 @@ section.categoria {
   margin-bottom: 16px;
 }
 
-.width-fix.mt-3 .card {
-  height: auto;
+.width-fix.mt-3.pages .card {
+  height: 55px;
   display: flex;
   align-items: center;
 
@@ -404,6 +404,8 @@ section.categoria {
 .card-options {
   display: flex;
   flex-direction: row;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
 }
 
 .info-produto-options{
@@ -543,8 +545,120 @@ textarea{
   font-size: 16px;
 }
 
+/*SOBRE A EMPRESA*/
+
+.bg-top.sobre {
+  height: 205px;
+}
 
 
+.card.about {
+  height: auto;
+  justify-content: normal;
+
+  padding: 10px 35px 15px 20px;
+
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.infos.sobre {
+  text-align: start;
+
+  margin-top: 26px;
+}
+
+.infos.sobre h1 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.tittle-sobre{
+  margin-bottom: 20px;
+  margin-top: 25px;
+  margin-right: 100px;
+
+}
+
+.sobre {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.container-img-sobre {
+  position: absolute;
+  margin-top: -40px;
+
+  width: 75px;
+  height: 75px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+
+  background-color: var(--color-white);
+
+  border-radius: 16px;
+  border: 1px solid  var(--color-secundary);
+
+}
+
+.lista .container-group.sobre {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.container-group.sobre .span-card {
+  margin-bottom: -5px;
+}
+
+.container-group.sobre .card{
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+
+  align-items: start;
+
+  padding: 15px 15px;
+
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.normal-text {
+
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.normal-text b{
+  color: var(--color-black);
+}
+
+.btn-full {
+  font-weight: bold;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 10px;
+  width: calc(100% - 20px);
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 16px;
+  padding: 15px 25px;
+  font-size: 18px;
+
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.btn-full.voltar {
+  justify-content: center;
+}
 
 
 
