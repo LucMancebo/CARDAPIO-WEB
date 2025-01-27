@@ -23,6 +23,14 @@ body {
   color: var(--color-text);
 }
 
+.fa, .fas, .far, .fal, .fad, .fab {
+  line-height: normal;
+}
+
+p {
+  margin-bottom: 0;
+}
+
 .hidden {
   display: none !important;
 }
@@ -68,7 +76,7 @@ body {
 }
 
 .infos h1 {
-  font-family: "germania one", "poppins", sans-serif;
+  font-family: "germania one", "poppinsRegular", sans-serif;
   font-size: 32px;
   margin-bottom: 8px;
   color: var(--color-black);
@@ -223,12 +231,10 @@ section.categoria {
 }
 
 .infos-produto .name {
-  font-family: "germania one", "poppins", sans-serif;
+  font-family: "germania one", "poppinsRegular", sans-serif;
   font-size: 28px;
 
   letter-spacing: 2px;
-
-  margin-bottom: -4px;
   color: var(--color-black);
 }
 
@@ -237,11 +243,10 @@ section.categoria {
 }
 
 .infos-produto .price {
-  font-family: "germania one", "poppins", sans-serif;
+  font-family: "germania one", "poppinsRegular", sans-serif;
   font-size: 28px;
 
-  margin-top: -12px;
-  margin-bottom: -4px;
+  margin-top: 2px;
 
   color: var(--color-green);
 }
@@ -659,6 +664,118 @@ textarea{
 .btn-full.voltar {
   justify-content: center;
 }
+
+
+/*CARRINHO*/
+.bg-top.pedido {
+  height: 180px;
+}
+
+.carrinho {
+  font-size: 14px;
+  font-family: "poppinsRegular", sans-serif;
+}
+
+.carrinho .card {
+  height: auto;
+  width: 100%;
+  
+  justify-content: normal;
+
+  align-items: start;
+  text-align: start;
+
+}
+
+.infos.carrinho h1 {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.infos.carrinho p {
+  margin-bottom: 8px;
+}
+
+.container-detalhes {
+  display: flex;
+  width: 100%;
+}
+
+.detalhes-produto {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.carrinho .infos-produto {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.carrinho .infos-produto .name {
+  font-family: "poppinsRegular",sans-serif;
+  letter-spacing: normal;
+
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.carrinho .infos-produto .price {
+  font-family: "poppinsRegular", sans-serif;
+  font-size: 16px;
+
+  font-weight:bolder;
+
+  color: var(--color-black);
+}
+
+.carrinho .infos-produto .name-opcional,
+.carrinho .infos-produto .price-opcional,
+.carrinho .infos-produto .obs-opcional {
+
+  font-size: 14px;
+  color: var(--color-text);
+
+  margin-left: 16px;
+
+}
+
+.carrinho .infos-produto .obs-opcional { 
+margin-right: 75px;
+margin-top: 4px;
+
+color: var(--color-secundary);
+}
+
+.Detalhes-produto.edit {
+  margin-top: 2px;
+  margin-left: auto; 
+  font-size: 14px;
+  padding-left: 14px;
+  padding-right: auto;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.carrinho .infos-produto .name-total {
+  font-size: 18px;
+  color: var(--color-black);
+}
+
+.carrinho .infos-produto .price-total {
+  font-size: 18px;
+  color: var(--color-secundary);
+}
+
+
+
 
 
 
