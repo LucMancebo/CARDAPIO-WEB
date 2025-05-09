@@ -1,184 +1,520 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cardápio Icarus</title>
+    <title>ICARUS - Hamburgueria artesanal</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/fontawesome.css" />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
 
   <body>
-    <div class="bg-top"></div>
-
-    <header class="width-fix mt-3">
-      <div class="card">
-        <div class="container-img"></div>
-        <div class="d-flex">
-          <div class="infos">
-            <h1><b>ICARUS HAMBURGUERIA</b></h1>
-            <div class="infos-sub">
-              <p class="status-open"><i class="fa fa-clock"></i> Aberta</p>
-            </div>
-            <a href="sobre.html" class="link"> Ver mais</a>
-          </div>
+    <!-- Header -->
+    <header>
+      
+      <div class="card-header">
+        <img class="img-logo" src="/img/Ativo 6@4x-8.png" alt="Logo do Icarus Hamburgueria" /><br>
+        <div class="texto-logo">
+          <h1>ICARUS</h1>
+          <p>Hamburgueria artesanal</p>
         </div>
+      </div>
+      <div class="status" id="status-loja">Fechado no momento</div>
+
+      <div class="cart">
+        <img class="" src="/SVG/cart-shopping-solid.svg" alt="">
+        <span class="cart-counter"></span>
       </div>
     </header>
 
-    <section class="categoria width-fix">
-      <div class="container-menu" id="listaCategorias">
-        <a
-          href="#"
-          class="item-categoria btn btn-white btn-sm mb-3 me-3 active"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-            <path
-              d="M61.1 224C45 224 32 211 32 194.9c0-1.9 .2-3.7 .6-5.6C37.9 168.3 78.8 32 256 32s218.1 136.3 223.4 157.3c.5 1.9 .6 3.7 .6 5.6c0 16.1-13 29.1-29.1 29.1L61.1 224zM144 128a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zm240 16a16 16 0 1 0 0-32 16 16 0 1 0 0 32zM272 96a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zM16 304c0-26.5 21.5-48 48-48l384 0c26.5 0 48 21.5 48 48s-21.5 48-48 48L64 352c-26.5 0-48-21.5-48-48zm16 96c0-8.8 7.2-16 16-16l416 0c8.8 0 16 7.2 16 16l0 16c0 35.3-28.7 64-64 64L96 480c-35.3 0-64-28.7-64-64l0-16z"
-            /></svg
-          >&nbsp; Hamburguer artesanal
-        </a>
+    <!-- Navegação por categorias -->
+    <nav class="categorias">
+      <button data-categoria="burgers">Burgers</button>
+      <button data-categoria="batata">Batata</button>
+      <button data-categoria="combos">Combos</button>
+      <button data-categoria="bebidas">Bebidas</button>
+      <button data-categoria="acai">Açaí</button>
+    </nav>
+    
 
-        <a href="#" class="item-categoria btn btn-white btn-sm mb-3 me-3">
-          <svg
-            width="16"
-            viewBox="0 0 121 160"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M27.786 3.046C24.644 4.668 21.656 6.784 21.147 7.748C20 9.918 30.239 72.311 32.154 74.821C34.244 77.559 38.406 80.925 39.75 80.964C40.729 80.992 41 72.697 41 42.723C41 9.697 40.786 4.14 39.443 2.223C37.389 -0.710001 34.693 -0.52 27.786 3.046ZM51.511 2.342C50.185 4.366 50.012 10.101 50.238 44.592L50.5 84.5H60.5H70.5L70.762 47.207C70.935 22.58 70.668 9.248 69.975 7.952C68.774 5.709 58.061 0 55.052 0C53.949 0 52.356 1.054 51.511 2.342ZM88 11.645C84.975 12.45 81.938 13.845 81.25 14.745C80.31 15.977 80 24.384 80 48.691C80 84.502 79.841 83.77 86.27 77.526C90.35 73.563 89.941 75.115 96.441 39C101.987 8.185 101.912 7.944 88 11.645ZM1.674 27.138C0.292003 29.287 0.401002 30.854 2.877 44.5L5.6 59.5L12.147 59.792L18.694 60.084L15.999 43.994C14.516 35.144 12.898 27.498 12.402 27.003C11.906 26.508 9.631 25.804 7.347 25.439C3.695 24.855 3.01 25.061 1.674 27.138ZM111 25.893C108.643 26.548 108.347 27.446 105.825 41.544C102.173 61.961 101.839 60.151 109.2 59.798L115.401 59.5L118.123 44.5C120.543 31.163 120.685 29.251 119.399 27.25C117.93 24.963 115.668 24.598 111 25.893ZM2.944 71.844C1.474 73.035 0.691004 74.719 0.735004 76.594C0.773004 78.192 4.897 96.375 9.899 117C18.426 152.153 19.184 154.672 22.013 157.25L25.032 160H60.5H95.968L98.982 157.25C101.803 154.675 102.598 152.037 111.474 115.754C121.438 75.03 121.634 73.48 117.114 71.061C116.023 70.477 112.435 70 109.138 70C103.855 70 102.9 70.312 101.073 72.635C99.933 74.084 99 75.911 99 76.695C99 79.276 89.063 88.726 84.107 90.859C81.468 91.994 75.151 93.476 70.069 94.153C59.006 95.626 44.695 94.215 36.965 90.89C31.939 88.728 22 79.3 22 76.695C22 75.911 21.067 74.084 19.927 72.635C18.079 70.285 17.171 70 11.538 70C6.889 70 4.62 70.487 2.944 71.844Z"
-            /></svg
-          >&nbsp; Batata Frita
-        </a>
+    <!-- Conteúdo principal -->
+    <main>
+      <!-- Seção Burguers -->
+      <section class="categoria" id="burgers">
+        <h2>BURGERS</h2>
 
-        <a href="#" class="item-categoria btn btn-white btn-sm mb-3 me-3">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-            <path
-              d="M32 32c-9.3 0-18.1 4-24.2 11.1S-1 59.4 .3 68.6l50 342.9c5.7 39.3 39.4 68.5 79.2 68.5l253 0c39.7 0 73.4-29.1 79.2-68.5l50-342.9c1.3-9.2-1.4-18.5-7.5-25.5S489.3 32 480 32L32 32zM87.7 224L69 96l374 0L424.3 224 87.7 224z"
-            /></svg
-          >&nbsp; Bebidas
-        </a>
+        <!-- CAOS -->
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="/img/CAOS-01.png" alt="Burger Caos" />
+          </div>
+          <div class="descricao">
+            <h3>CAOS</h3>
+            <p>Pão Brioche, Blend bovino 100g, Cheddar fatia, Salada (Alface,Tomate e Cebola) e Maionese.</p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 19,00</span>
+              <button class="btn-adicionar" data-nome="caos" data-preco="19">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- EREBUS -->
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Burger Erebus" />
+          </div>
+          <div class="descricao">
+            <h3>EREBUS</h3>
+            <p>Pão Brioche, Blend bovino 100g, Catupiry, cebola crispy e Maionese.</p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 19,50</span>
+              <button class="btn-adicionar" data-nome="erebus" data-preco="19.5">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- URANOS -->
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Burger Uranos" />
+          </div>
+          <div class="descricao">
+            <h3>URANOS</h3>
+            <p>Pão Brioche, Blend frango 120g, Catupiry, Bacon, Alface e cebola.</p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 21,00</span>
+              <button class="btn-adicionar" data-nome="uranos" data-preco="21">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- NIX -->
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Burger Nix" />
+          </div>
+          <div class="descricao">
+            <h3>NIX</h3>
+            <p>Pão Brioche, Blend bovino 100g, ovo, Bacon e Creme de queijo.</p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 23,50</span>
+              <button class="btn-adicionar" data-nome="nix" data-preco="23.5">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- GAIA -->
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Burger Nix" />
+          </div>
+          <div class="descricao">
+            <h3>GAIA</h3>
+            <p>Pão Brioche, 2 Blend smash 60g, 2 Cheddar fatia, Bacon e Cebola roxa.</p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 25,00</span>
+              <button class="btn-adicionar" data-nome="gaia" data-preco="25">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- OREAS -->
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Burger Nix" />
+          </div>
+          <div class="descricao">
+            <h3>ÓREIAS</h3>
+            <p>Pão Brioche, 2 Blend bovino 100g, Ovo, 2 Cheddar fatia, Bacon e Cebola caramelizada.</p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 31,50</span>
+              <button class="btn-adicionar" data-nome="oreas" data-preco="31.5">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Repetir os artigos para outros produtos -->
+      </section>
+
+      <!-- Seção Batata -->
+      <section class="categoria"  id="batata">
+        <h2>BATATA FRITA</h2>
+
+        <!-- BATATA P -->
+        <article class="produto" data-categoria="batata">
+          <div class="produto-img-container">
+            <img src="" alt="Batata tamanho P" />
+          </div>
+          <div class="descricao">
+            <h3>Batata P</h3>
+            <p>150g de Batata frita crocante</p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 6,00</span>
+              <button class="btn-adicionar" data-nome="batataP" data-preco="6">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- BATATA M -->
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Batata tamanho M" />
+          </div>
+          <div class="descricao">
+            <h3>Batata M</h3>
+            <p>300g de Batata frita crocante</p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 10,00</span>
+              <button class="btn-adicionar" data-nome="batataM" data-preco="10">+</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- BATATA M -->
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Batata tamanho M Recheada" />
+          </div>
+          <div class="descricao">
+            <h3>Batata M Recheada</h3>
+            <p>300g de Batata frita crocante, Bacon, Calabresa, Cheddar e Catupiry</p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 15,00</span>
+              <button class="btn-adicionar" data-nome="batataMR" data-preco="15">+</button>
+            </div>
+          </div>
+        </article>
+
+        </section>
+
+      <!-- Combos --> 
+      <section class="categoria" id="combos">
+        <h2>COMBOS</h2>
+        <p class="aviso">Nenhum combo disponível no momento.</p>
+
+        <!-- Nenhum produto por enquanto -->
+      </section>
+      
+
+      <!-- BEBIDAS -->
+      <section class="categoria" data-categoria="bebidas" id="bebidas">
+        <h2>BEBIDAS</h2>
+
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Guaravita 290ml" />
+          </div>
+          <div class="descricao">
+            <h3>GUARAVITA</h3>
+            <p>Guaravita 290ml.<br><br></p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 2,50</span>
+              <button class="btn-adicionar" data-nome="guaravita" data-preco="2.5">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Guarana lata 350ml" />
+          </div>
+          <div class="descricao">
+            <h3>GUARANÁ LATA</h3>
+            <p>Guaraná antarctica 350ml.<br><br></p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 5,50</span>
+              <button class="btn-adicionar" data-nome="guarana" data-preco="5.5">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Guarana lata 350ml zero" />
+          </div>
+          <div class="descricao">
+            <h3>GUARANÁ LATA ZERO</h3>
+            <p>Guaraná antarctica zero 350ml.<br><br></p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 5,50</span>
+              <button class="btn-adicionar" data-nome="guaranaZero" data-preco="5.5">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Coca lata 350ml" />
+          </div>
+          <div class="descricao">
+            <h3>COCA LATA</h3>
+            <p>Coca lata 350ml.<br><br></p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 6,00</span>
+              <button class="btn-adicionar" data-nome="cocaLata" data-preco="6">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Coca lata 350ml zero" />
+          </div>
+          <div class="descricao">
+            <h3>COCA LATA ZERO</h3>
+            <p>Coca lata 350ml zero.<br><br></p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 6,00</span>
+              <button class="btn-adicionar" data-nome="cocaLataZero" data-preco="6">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Guarana 1,5L" />
+          </div>
+          <div class="descricao">
+            <h3>GUARANÁ 1,5L</h3>
+            <p>Guaraná 1,5L.<br><br></p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 10,00</span>
+              <button class="btn-adicionar" data-nome="guaranaLitro" data-preco="10">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Coca cola 1,5L" />
+          </div>
+          <div class="descricao">
+            <h3>COCA COLA 1,5L</h3>
+            <p>Coca cola 1,5L.<br><br></p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 12,00</span>
+              <button class="btn-adicionar" data-nome="cocaLitro" data-preco="12">+</button>
+            </div>
+          </div>
+        </article>
+
+        
+
+
+
+
+      </section>
+
+      <!-- AÇAÍ -->
+      <section class="categoria" data-categoria="acai" id="acai">
+        <h2>AÇAÍ</h2>
+
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Açaí Batido de ovomaltine" />
+          </div>
+          <div class="descricao">
+            <h3 style="font-size: 22px;">AÇAI OVOMALTINE</h3>
+            <p>Açaí cremoso batido com ovomaltine e leite condensado.<br><br></p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 10,00</span>
+              <button class="btn-adicionar" data-nome="acai" data-preco="10">+</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="produto">
+          <div class="produto-img-container">
+            <img src="" alt="Açaí Batido de NINHO" />
+          </div>
+          <div class="descricao">
+            <h3>AÇAÍ NINHO</h3>
+            <p>Açaí cremoso batido com Ninho e leite condensado.<br><br></p>
+            <div class="preco-container">
+              <span class="preco"><span class="span-preco">R$</span> 10,00</span>
+              <button class="btn-adicionar" data-nome="acai" data-preco="10">+</button>
+            </div>
+          </div>
+        </article>
+
+
+        </section>
+
+
+      </main>
+
+    <!-- Modal de adicionais -->
+    <div id="modal-adicionais" class="modal hidden">
+      <div class="modal-conteudo">
+        <div class="modal-header">
+          <h3>Escolha os adicionais</h3>
+          <span class="fechar x">×</span>
+        </div>
+        
+        <form>
+          <!-- Ingredientes opcionais -->
+          <fieldset >
+            <legend class="legend-adicionais">Adicionais</legend>
+            <div class="adicionais">
+
+              <div class="adicional">
+                <label><input type="checkbox" value="cebola-caramelizada" data-preco="1.5" />Cebola caramelizada</label>
+                <span class="preco">R$ 1,50</span><br/>
+              </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="cebola-crispy" data-preco="1.5" />Cebola crispy</label>
+                <span class="preco">R$ 1,50</span><br/>
+              </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="cheddar-fatia" data-preco="2" />Cheddar fatia</label>
+                <span class="preco">R$ 2,00</span><br/>
+              </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="ovo" data-preco="2.5" />Ovo</label>
+                <span class="preco">R$ 2,50</span><br/>
+              </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="calabresa" data-preco="2.5" />Calabresa</label>
+                <span class="preco">R$ 2,50</span><br/>
+              </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="catupiry" data-preco="3" />Catupiry</label>
+                <span class="preco">R$ 3,00</span><br/>
+              </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="bacon" data-preco="3.5" />Bacon</label>
+                <span class="preco">R$ 3,50</span><br/>
+              </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="blend-smash" data-preco="4" />Blend-smash 60g</label>
+                <span class="preco">R$ 4,00</span><br/>
+              </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="blend-bovino" data-preco="5" />Blend bovino 100g</label>
+                <span class="preco">R$ 5,00</span><br/>
+              </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="blend-frango" data-preco="5" />Blend frango 120g</label>
+                <span class="preco">R$ 5,00</span><br/>
+              </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="creme-queijo" data-preco="5" />Creme de queijo</label>
+                <span class="preco">R$ 5,00</span><br/>
+              </div>
+
+            </div>
+            
+          </fieldset>
+
+          <!-- Molho obrigatório -->
+          <fieldset>
+            <legend class="legend-adicionais">Molho (obrigatório)</legend>
+            <div class="molhos">
+              <label><input type="radio" name="molho" value="naoObrigado" required />Nenhum.</label>
+              <label><input type="radio" name="molho" value="maionese" required />Maionese.</label>
+              <label><input type="radio" name="molho" value="ketchup" required />Maionese e Ketchup.</label>
+              <label><input type="radio" name="molho" value="mostarda" required />Maionese, Ketchup e Mostarda.</label>
+            </div> 
+          </fieldset>
+
+
+          <!-- Observações -->
+          <label>Observações:<br />
+            <textarea name="observacoes"></textarea>
+          </label>
+
+          <button type="submit" >Adicionar ao carrinho</button>
+        </form>
       </div>
-    </section>
+    </div>
 
-    <section class="lista width-fix mt-0 pb-5" id="listaItensCardapio">
-      <p class="title-categoria"><b>Hamburguer artesanal</b></p>
-
-      <div class="container-group mb-5">
-        <div class="card mb-2 item-cardapio">
-          <div
-            class="container-img-produto"
-            style="
-              background-image: url('/img/calabresa.jpg');
-              background-size: cover;
-            "
-          ></div>
-          <div class="d-flex">
-            <div class="infos-produto">
-              <p class="name"><b>CAOS</b></p>
-              <p class="description">
-                Pão brioche, Blend 100g, Cheddar, Salada (alface, tomate,
-                cebola) e Maionese
-              </p>
-              <p class="price"><b>R$ 18,00</b></p>
-            </div>
+    <!-- Modal do carrinho -->
+    <div id="modal-carrinho" class="modal hidden">
+      <div class="modal-conteudo">
+        <div class="modal-header">
+          <div>
+            <h3>PEDIDO</h3>
           </div>
+          
         </div>
 
-        <div class="card mb-2 item-cardapio">
-          <div
-            class="container-img-produto"
-            style="
-              background-image: url('/img/calabresa.jpg');
-              background-size: cover;
-            "
-          ></div>
-          <div class="d-flex">
-            <div class="infos-produto">
-              <p class="name"><b>CAOS</b></p>
-              <p class="description">
-                Pão brioche, Blend 100g, Cheddar, Salada (alface, tomate,
-                cebola) e Maionese
-              </p>
-              <p class="price"><b>R$ 18,00</b></p>
-            </div>
-          </div>
+        
+        <div id="itens-carrinho">
+          <!-- Lista dinâmica de produtos -->
         </div>
 
-        <div class="card mb-2 item-cardapio">
-          <div
-            class="container-img-produto"
-            style="
-              background-image: url('/img/calabresa.jpg');
-              background-size: cover;
-            "
-          ></div>
-          <div class="d-flex">
-            <div class="infos-produto">
-              <p class="name"><b>CAOS</b></p>
-              <p class="description">
-                Pão brioche, Blend 100g, Cheddar, Salada (alface, tomate,
-                cebola) e Maionese
-              </p>
-              <p class="price"><b>R$ 18,00</b></p>
-            </div>
-          </div>
+        <label>Região<br>
+          <select name="taxa" id="taxa" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="morroGrande" data-preco="2">Morro grande</option>
+            <option value="condominios" data-preco="2">condominios</option>
+            <option value="velleto" data-preco="4">Estrada velleto</option>
+            <option value="km5" data-preco="4">Km 5</option>
+            <option value="km1" data-preco="6">Horto Km1</option>
+          </select>
+        </label>
+
+        <div class="form-group">
+          <label for="endereco-entrega">Endereço de Entrega:</label>
+          <textarea id="endereco" class="endereco-textarea" placeholder="Rua, número, bairro, complemento..." required></textarea>
         </div>
 
-        <div class="card mb-2 item-cardapio">
-          <div
-            class="container-img-produto"
-            style="
-              background-image: url('/img/calabresa.jpg');
-              background-size: cover;
-            "
-          ></div>
-          <div class="d-flex">
-            <div class="infos-produto">
-              <p class="name"><b>CAOS</b></p>
-              <p class="description">
-                Pão brioche, Blend 100g, Cheddar, Salada (alface, tomate,
-                cebola) e Maionese
-              </p>
-              <p class="price"><b>R$ 18,00</b></p>
-            </div>
-          </div>
+        <label>Forma de pagamento:<br>
+          <select name="pagamento" id="pagamento" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="pix">Pix</option>
+            <option value="dinheiro">Dinheiro</option>
+            <option value="debito">Débito</option>
+            <option value="credito">Crédito</option>
+          </select>
+        </label>
+
+        
+        <div class="modal-footer">
+          <button id="finalizar-pedido">Enviar pedido via WhatsApp</button>
+          <span class="fechar">Continuar comprando</span>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section class="menu-bottom" id="menu-bottom">
-      <a class="menu-bottom-item">
-        <i class="fas fa-book-open"></i>&nbsp; Cardápio
-      </a>
-      <a class="menu-bottom-item">
-        <i class="fas fa-utensils"></i>&nbsp; Pedido
-      </a>
-      <a href="/carrinho.html" class="menu-bottom-item active">
-        <span class="badge-total-carrinho">2</span>
-        <!-- <i class="fas fa-shopping-cart"></i>-->&nbsp; Carrinho
-      </a>
-    </section>
+    <!-- Rodapé -->
+    <footer>
+      <div class="card-footer">
+        <p>Contato: <a href="">(22) 99847-0719</a></p>
+        <a href="https://www.instagram.com/icarushamburgueria/">Instagram</a>
+        <a href="#">iFood (BREVE)</a>
+      </div>
+      
+    </footer>
 
-    <section class="menu-bottom disable hidden" id="menu-bottom-closed">
-      <p class="mb-0"><b>fechado no momento</b></p>
-
-    </section>
-
-    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="js/cardapio.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="/js/contador.js"></script>
   </body>
+
+  <!-- alert -->
+
+  <div id="custom-alert" class="custom-alert hidden">
+    <div class="alert-content">
+      <p id="alert-message"></p>
+      <button id="alert-ok-btn">OK</button>
+    </div>
+  </div>
+
 </html>
+

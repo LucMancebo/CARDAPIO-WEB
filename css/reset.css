@@ -4,9 +4,11 @@
     border: none;
     outline: none;
     box-sizing: border-box;
-
 }
-
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
 a{
     text-decoration: none;
     color: #000000;
