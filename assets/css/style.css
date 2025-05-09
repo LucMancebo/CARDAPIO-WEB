@@ -983,26 +983,10 @@ nav.categorias button:focus:not(:active)::after,
   .modal-conteudo {
     padding: 1.5rem;
   }
-  
-  .modal-footer {
-    flex-direction: row;
-    justify-content: center;
-    gap: 16px;
-  }
+
 }
 
 /* Telas grandes (acima de 768px) */
-@media (min-width: 769px) {
-  .modal-conteudo {
-    padding: 2rem;
-  }
-  
-  .modal-footer {
-    flex-direction: row;
-    justify-content: center;
-    gap: 24px;
-  }
-}
 
 /* Ajustes para telas com altura muito pequena */
 @media (max-height: 600px) {
