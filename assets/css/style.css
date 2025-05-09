@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "montserrat", sans-serif;
-  background-color: #ffffff;
+  background-color: #4b0176;
   opacity: 0;
   transition: opacity 1s ease-in-out;
   animation: fadeIn 1s forwards;
@@ -57,8 +57,8 @@ header {
   width: 720px;
   max-width: 100%;
   height: 380px;
-  background-color: #4b0176;
-  color: white;
+  background-color: #ffffff;
+  color: #4b0176;
   padding: 16px;
   text-align: center;
   border-radius: 10px;
@@ -67,10 +67,12 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 10px #00000044;
 }
 
 header .card-header {
   padding: 12px;
+  
 }
 
 header .img-logo {
@@ -147,6 +149,7 @@ nav.categorias button {
   overflow: hidden;
   transition: all 0.3s ease-out;
   margin: 0;
+  border: solid 1px #ffffff;
 }
 
 /* Efeito hover mais suave */
@@ -154,6 +157,7 @@ nav.categorias button:hover {
   background-color: #f5f5f5;
   transform: translateY(-2px);
   box-shadow: 0 2px 8px rgba(75, 1, 118, 0.2);
+  border: 1px solid #fbf5ff;
 }
 
 /* Produtos */
@@ -175,7 +179,12 @@ main {
   border-radius: 10px;
   margin-bottom: 16px; /* 24px */
   text-align: center;
+  display: flex;
+  text-align: start;
+  margin-top: 6px;
+  font-size: 10px;
 }
+
 
 .categoria {
   padding: auto; /* 16px 32px */
@@ -184,8 +193,8 @@ main {
 .categoria h2 {
   font-size: 22px;
   margin-bottom: 1rem; /* 16px */
-  color: rgb(14, 14, 14);
-  border-bottom: 2px solid #4b0176;
+  color: rgb(255, 255, 255);
+  border-bottom: 2px solid #f1c40f;
   display: inline-block;
   margin-bottom: 28px;
 }
@@ -229,6 +238,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.4rem; /* 6.4px */
+}
+
+.ingredientes {
+  font-size: 14px;
+  color: #4b0176;
+  font-weight: bold;
 }
 
 .descricao h3 {
@@ -573,10 +588,14 @@ footer .card-footer {
   align-items: center;
   padding: 16px;
   gap: 8px;
+  background-color: #ffffff;
+  color: #4b0176;
+  border-radius: 12px 12px 0 0;
+  width: 100%;
 }
 
 footer a {
-  color: #ffffff;
+  color: #5e0392;
   font-weight: bold;
   text-decoration: none;
 }
