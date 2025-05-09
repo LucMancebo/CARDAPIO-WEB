@@ -363,6 +363,12 @@ main {
   box-shadow: 0 0 15px #00000088;
 
   pointer-events: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: 20px 0;
+
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-conteudo h3 {
@@ -410,6 +416,7 @@ main {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .modal-footer {
@@ -470,7 +477,6 @@ main {
   flex-direction: column;
   margin-top: 12px;
   gap: 8px; /* 8px */
-  padding: 0 16px;
   margin-bottom: 16px;
 }
 
@@ -510,7 +516,6 @@ input[type="radio"] {
   flex-direction: column;
   margin-top: 12px;
   gap: 8px; /* 8px */
-  padding: 0 16px;
   margin-bottom: 16px;
 }
 
@@ -783,6 +788,57 @@ footer a {
   background-color: #5e0392;
 }
 
+/* Estilo base para o campo */
+textarea, input[type="text"] {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: #ffffff;
+  border: 1px solid #4b0176;
+  border-radius: 6px;
+  padding: 10px;
+  outline: none;
+}
+
+/* Animação quando é habilitado */
+@keyframes habilitarCampo {
+  from {
+    background-color: #979595;
+    opacity: 0.2;
+  }
+  to {
+    background-color: #ffffff;
+    opacity: 1;
+  }
+}
+
+.campo-habilitado {
+  animation: habilitarCampo 0.4s forwards;
+  cursor: text;
+}
+
+/* Animação quando é desabilitado */
+@keyframes desabilitarCampo {
+  from {
+    background-color: #ffffff;
+    opacity: 1;
+  }
+  to {
+    background-color: #979595;
+    opacity: 0.2;
+  }
+}
+
+.campo-desabilitado {
+  animation: desabilitarCampo 0.4s forwards;
+  cursor: not-allowed;
+}
+
+/* Efeito de foco para campos habilitados */
+textarea:not(.campo-desabilitado):focus, 
+input[type="text"]:not(.campo-desabilitado):focus {
+  border-color: #f1c40f;
+  box-shadow: 0 0 0 2px rgba(241, 196, 15, 0.3);
+}
+
 /*botão adc e nav*/
 
 nav.categorias button:hover {
@@ -859,5 +915,143 @@ nav.categorias button:focus:not(:active)::after,
   100% {
     transform: scale(20, 20);
     opacity: 0;
+  }
+}
+
+/*media*/
+
+@media (max-width: 375px) and (max-height: 667px) {
+  .modal-conteudo {
+    padding: 1rem;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .modal-conteudo fildseat{
+    font-size: 16px;
+  }
+  
+  .modal-conteudo h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .modal-footer {
+    margin-top: 0.8rem;
+  }
+  
+  .adicional, .molhos {
+    padding: 0 8px;
+    gap: 6px;
+  }
+  
+  .legend-adicionais {
+    font-size: 1rem;
+  }
+  
+  .modal-conteudo button {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin: 16px auto 0;
+  }
+  
+  .modal-conteudo .fechar {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  
+  .modal-conteudo .x {
+    font-size: 22px;
+  }
+}
+
+/* Telas pequenas (376px a 414px - iPhone Plus/X/XR) */
+@media (min-width: 376px) and (max-width: 414px) {
+  .modal-conteudo {
+    padding: 1.2rem;
+    max-height: 85vh;
+  }
+  
+  .adicional, .molhos {
+    gap: 8px;
+  }
+}
+
+/* Telas médias (415px a 768px - Tablets pequenos) */
+@media (min-width: 415px) and (max-width: 768px) {
+  .modal-conteudo {
+    padding: 1.5rem;
+  }
+  
+  .modal-footer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+/* Telas grandes (acima de 768px) */
+@media (min-width: 769px) {
+  .modal-conteudo {
+    padding: 2rem;
+  }
+  
+  .modal-footer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+/* Ajustes para telas com altura muito pequena */
+@media (max-height: 600px) {
+  .modal-conteudo {
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+  
+  .modal-conteudo h3 {
+    margin-top: 0;
+  }
+}
+
+/* Orientação paisagem em telas pequenas */
+@media (max-width: 740px) and (orientation: landscape) {
+  .modal-conteudo {
+    max-width: 85%;
+    max-height: 90vh;
+  }
+  
+  .adicional, .molhos {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .adicional label {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+
+/* Media Query específica para telas altas e finas */
+@media (min-height: 700px) and (max-width: 400px) {
+  .modal-conteudo {
+    max-height: 80vh;
+    margin: 40px 0; /* Margem maior para telas altas */
+  }
+}
+
+/* Ajuste fino para telas muito altas */
+@media (min-height: 800px) and (max-width: 400px) {
+  .modal-conteudo {
+    max-height: 85vh;
+  }
+}
+
+/* Remove padding quando não há espaço suficiente */
+@media (max-height: 600px) {
+  .modal {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }

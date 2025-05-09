@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
       (item) =>
         item.nomeKey === produtoAtual.nomeKey &&
         JSON.stringify(item.adicionais) ===
-          JSON.stringify(produtoAtual.adicionais) &&
+        JSON.stringify(produtoAtual.adicionais) &&
         item.molho === produtoAtual.molho
     );
 
@@ -384,18 +384,17 @@ document.addEventListener("DOMContentLoaded", function () {
               <p class="adicional-titulo">Adicionais: </p>
               <ul class="lista-adicionais">
                   ${item.adicionais
-                    .map(
-                      (adicional) => `
+            .map(
+              (adicional) => `
                       <li class="adicional-item">
-                          ${
-                            adicional.nome
-                          } <span class="adicional-preco">${formatarPreco(
-                        adicional.preco
-                      )}</span>
+                          ${adicional.nome
+                } <span class="adicional-preco">${formatarPreco(
+                  adicional.preco
+                )}</span>
                       </li>
                   `
-                    )
-                    .join("")}
+            )
+            .join("")}
               </ul>
           `;
         itemElement.appendChild(adicionaisElement);
@@ -433,15 +432,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const taxaSelect = document.getElementById("taxa");
+    const enderecoTextarea = document.getElementById("endereco"); // Certifique-se que este ID existe no seu HTML
     const taxaSelecionada = taxaSelect.options[taxaSelect.selectedIndex];
     let taxaEntrega = 0;
 
-    if (
-      taxaSelecionada &&
-      taxaSelecionada.value &&
-      !isNaN(parseFloat(taxaSelecionada.dataset.preco))
-    ) {
-      taxaEntrega = parseFloat(taxaSelecionada.dataset.preco);
+    // Verifica se é retirada e atualiza o campo de endereço
+    if (taxaSelecionada && taxaSelecionada.value) {
+      if (taxaSelecionada.value === "retirada") {
+        enderecoTextarea.disabled = true;
+        enderecoTextarea.required = false;
+        enderecoTextarea.value = "";
+        enderecoTextarea.classList.add("campo-desabilitado");
+      } else {
+        enderecoTextarea.disabled = false;
+        enderecoTextarea.required = true;
+        enderecoTextarea.classList.remove("campo-desabilitado");
+      }
+
+      // Calcula a taxa de entrega
+      if (!isNaN(parseFloat(taxaSelecionada.dataset.preco))) {
+        taxaEntrega = parseFloat(taxaSelecionada.dataset.preco);
+      }
     }
 
     const totalFinal = total + taxaEntrega;
@@ -450,22 +461,34 @@ document.addEventListener("DOMContentLoaded", function () {
     totalElement.className = "carrinho-total";
     totalElement.innerHTML = `
     <div class="container-total">
-    <div class="total-container">
+      <div class="total-container">
         <span class="total-texto">Taxa:</span>
         <span class="total-valor">${formatarPreco(taxaEntrega)}</span>
-    </div>
-    <div class="total-container">
+      </div>
+      <div class="total-container">
         <span class="total-texto">Total:</span>
         <span class="total-valor">${formatarPreco(totalFinal)}</span>
-    </div>
-    
+      </div>
     </div>`;
 
     itensCarrinho.appendChild(totalElement);
 
     // 6. Adicione um listener para atualizar quando a taxa mudar
     taxaSelect.addEventListener("change", function () {
-      atualizarCarrinho(); // Isso recalculará o total com a nova taxa
+      const isRetirada = this.value === "retirada";
+
+      // Atualiza o campo de endereço
+      enderecoTextarea.disabled = isRetirada;
+      enderecoTextarea.required = !isRetirada;
+      if (isRetirada) {
+        enderecoTextarea.value = "";
+        enderecoTextarea.classList.add("campo-desabilitado");
+      } else {
+        enderecoTextarea.classList.remove("campo-desabilitado");
+      }
+
+      // Atualiza o carrinho
+      atualizarCarrinho();
     });
 
     // Configura eventos dos botões de quantidade
@@ -522,13 +545,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const taxaEntrega = parseFloat(taxaSelecionada.dataset.preco);
 
     // Valida endereço e pagamento
-    if (!endereco || !pagamento) {
-      showAlert(
-        "Por favor, preencha o endereço de entrega e selecione a forma de pagamento!"
-      );
+    const isRetirada = document.getElementById("taxa").value === "retirada";
+
+    if (!pagamento) {
+      showAlert("Por favor, selecione a forma de pagamento!");
       return;
     }
-
+    if (!isRetirada && !endereco) {
+      showAlert("Por favor, preencha o endereço de entrega!");
+      return;
+    }
     // Monta a mensagem do pedido
     let mensagem = "*PEDIDO - ICARUS HAMBURGUERIA*\n\n";
     mensagem += "ITENS DO PEDIDO:\n";
