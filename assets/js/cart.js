@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalAdicionais = document.getElementById("modal-adicionais");
   const modalCarrinho = document.getElementById("modal-carrinho");
   const btnAdicionar = document.querySelectorAll(".btn-adicionar");
-  const btnFecharAdicionais = document.querySelector("#modal-adicionais .fechar");
+  const btnFecharAdicionais = document.querySelector(
+    "#modal-adicionais .fechar"
+  );
   const btnFecharCarrinho = document.querySelector("#modal-carrinho .fechar");
   const cartButton = document.querySelector(".cart");
   const cartCounter = document.querySelector(".cart-counter"); // Usando a classe que já existe no seu HTML
@@ -257,7 +259,16 @@ document.addEventListener("DOMContentLoaded", function () {
   btnAdicionar.forEach((button) => {
     button.addEventListener("click", function () {
       const produtoCard = this.closest(".produto");
-      abrirModalAdicionais(produtoCard, this);
+      const categoria = this.dataset.categoria; // Adicione data-categoria nos seus botões
+
+      // Categorias que não devem abrir modal
+      const categoriasSemAdicionais = ["bebidas", "acai"];
+
+      if (categoriasSemAdicionais.includes(categoria)) {
+        adicionarDiretoAoCarrinho(produtoCard, this);
+      } else {
+        abrirModalAdicionais(produtoCard, this);
+      }
     });
   });
 
@@ -267,6 +278,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Se quiser animação no carrinho também, crie uma função similar
     modalCarrinho.classList.add("hidden");
   });
+
+  
 
   // Adicionar ao carrinho
   formAdicionais.addEventListener("submit", function (e) {
@@ -306,7 +319,7 @@ document.addEventListener("DOMContentLoaded", function () {
       (item) =>
         item.nomeKey === produtoAtual.nomeKey &&
         JSON.stringify(item.adicionais) ===
-        JSON.stringify(produtoAtual.adicionais) &&
+          JSON.stringify(produtoAtual.adicionais) &&
         item.molho === produtoAtual.molho
     );
 
@@ -384,17 +397,18 @@ document.addEventListener("DOMContentLoaded", function () {
               <p class="adicional-titulo">Adicionais: </p>
               <ul class="lista-adicionais">
                   ${item.adicionais
-            .map(
-              (adicional) => `
+                    .map(
+                      (adicional) => `
                       <li class="adicional-item">
-                          ${adicional.nome
-                } <span class="adicional-preco">${formatarPreco(
-                  adicional.preco
-                )}</span>
+                          ${
+                            adicional.nome
+                          } <span class="adicional-preco">${formatarPreco(
+                        adicional.preco
+                      )}</span>
                       </li>
                   `
-            )
-            .join("")}
+                    )
+                    .join("")}
               </ul>
           `;
         itemElement.appendChild(adicionaisElement);
