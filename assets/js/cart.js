@@ -31,12 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let aberto = false;
 
     if (dia === 5 || dia === 6) {
-      aberto = hora >= 19 && hora < 24;
+      aberto = hora >= 18 && hora < 24;
     } else if (dia === 0) {
       aberto = hora >= 21 && hora < 24;
     } else if (dia === 1) {
       aberto =
-        (hora > 19 || (hora === 19 && minutos >= 0)) &&
+        (hora > 18 || (hora === 18 && minutos >= 0)) &&
         (hora < 23 || (hora === 23 && minutos <= 30));
     }
 
