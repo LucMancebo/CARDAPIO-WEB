@@ -54,10 +54,11 @@
           </div>
           <div class="descricao">
             <h3>CAOS</h3>
+            <span class="promotion">PROMOÇÃO</span>
             <p>Pão Brioche, Blend bovino 100g, Cheddar fatia, Salada (Alface,Tomate e Cebola) e Maionese.</p>
             <div class="preco-container">
-              <span class="preco"><span class="span-preco">R$</span> 19,00</span>
-              <button class="btn-adicionar" data-nome="caos" data-preco="19">+</button>
+              <span class="preco"><span class="span-preco">R$</span> 17,99</span>
+              <button class="btn-adicionar" data-nome="caos" data-preco="17.99">+</button>
             </div>
           </div>
         </article>
@@ -84,10 +85,11 @@
           </div>
           <div class="descricao">
             <h3>URANOS</h3>
+            <span class="promotion">PROMOÇÃO</span>
             <p>Pão Brioche, Blend frango 120g, Catupiry, Bacon, Alface, cebola e Maionese.</p>
             <div class="preco-container">
-              <span class="preco"><span class="span-preco">R$</span> 21,00</span>
-              <button class="btn-adicionar" data-nome="uranos" data-preco="21">+</button>
+              <span class="preco"><span class="span-preco">R$</span> 19,99</span>
+              <button class="btn-adicionar" data-nome="uranos" data-preco="19.99">+</button>
             </div>
           </div>
         </article>
@@ -100,10 +102,11 @@
           </div>
           <div class="descricao">
             <h3>NIX</h3>
+            <span class="promotion">PROMOÇÃO</span>
             <p>Pão Brioche, Blend bovino 100g, ovo, Bacon e Creme de queijo.</p>
             <div class="preco-container">
-              <span class="preco"><span class="span-preco">R$</span> 23,50</span>
-              <button class="btn-adicionar" data-nome="nix" data-preco="23.5">+</button>
+              <span class="preco"><span class="span-preco">R$</span> 21,99</span>
+              <button class="btn-adicionar" data-nome="nix" data-preco="21.99">+</button>
             </div>
           </div>
         </article>
@@ -160,7 +163,7 @@
       <section class="categoria"  id="batata">
         <h2>BATATA FRITA</h2>
 
-        <!-- BATATA P -->
+        <!-- BATATA P
         <article class="produto" data-categoria="batata">
           <div class="produto-img-container">
             <img src="" alt="Batata tamanho P" />
@@ -174,6 +177,7 @@
             </div>
           </div>
         </article>
+        -->
 
         <!-- BATATA M -->
         <article class="produto">
@@ -211,23 +215,6 @@
       <section class="categoria" id="combos">
         <h2>COMBOS</h2>
         <!--<p class="aviso">Nenhum combo disponível no momento.</p>-->
-
-        <article class="produto" data-categoria="combos">
-          <div class="produto-img-container">
-            <img src="assets/img/COMBO-QUEEN.png" alt="Combo queen" />
-          </div>
-          <div class="descricao">
-            <h3>COMBO QUEEN</h3>
-            <p>BURGUER HERA + COCA LATA<br>
-              <span class="ingredientes">Pão brioche, Blend bovino 100g, Mussarela, Linguiça toscana, vinagrete, BBQ e Maionese.</span>
-             
-            </p>
-            <div class="preco-container">
-              <span class="preco"><span class="span-preco">R$</span> 29,99</span>
-              <button class="btn-adicionar" data-nome="ComboQueen" data-preco="29.99">+</button>
-            </div>
-          </div>
-        </article>
 
         <article class="produto" data-categoria="combos">
           <div class="produto-img-container">
@@ -302,14 +289,17 @@
 
         <article class="produto">
           <div class="produto-img-container">
-            <img src="" alt="Coca lata 350ml" />
+            <img src="assets/img/Coca-lata.png" alt="Coca lata 350ml" />
           </div>
           <div class="descricao">
             <h3>COCA LATA</h3>
+            <span class="promotion">PROMOÇÃO</span>
             <p>Coca lata 350ml.<br><br></p>
+            
             <div class="preco-container">
-              <span class="preco"><span class="span-preco">R$</span> 6,00</span>
-              <button class="btn-adicionar" data-nome="cocaLata" data-preco="6">+</button>
+              <span class="preco"><span class="span-preco">R$</span> 4,99</span>
+              <button class="btn-adicionar" data-nome="cocaLata" data-preco="4.99">+</button>
+              
             </div>
           </div>
         </article>
@@ -402,6 +392,11 @@
               </div>
 
               <div class="adicional">
+                <label><input type="checkbox" value="cheddar-fatia" data-preco="2.5" />Mussarela</label>
+                <span class="preco">R$ 2,50</span><br/>
+              </div>
+
+              <div class="adicional">
                 <label><input type="checkbox" value="ovo" data-preco="2.5" />Ovo</label>
                 <span class="preco">R$ 2,50</span><br/>
               </div>
@@ -430,21 +425,23 @@
                 <label><input type="checkbox" value="blend-smash" data-preco="4" />Blend-smash 60g</label>
                 <span class="preco">R$ 4,00</span><br/>
               </div>
-
-              <div class="adicional">
-                <label><input type="checkbox" value="blend-bovino" data-preco="5" />Blend bovino 100g</label>
-                <span class="preco">R$ 5,00</span><br/>
-              </div>
-
-              <div class="adicional">
-                <label><input type="checkbox" value="blend-frango" data-preco="5" />Blend frango 120g</label>
-                <span class="preco">R$ 5,00</span><br/>
-              </div>
-
+              
               <div class="adicional">
                 <label><input type="checkbox" value="creme-queijo" data-preco="5" />Creme de queijo</label>
                 <span class="preco">R$ 5,00</span><br/>
               </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="blend-bovino" data-preco="5" />Blend bovino 100g</label>
+                <span class="preco">R$ 6,00</span><br/>
+              </div>
+
+              <div class="adicional">
+                <label><input type="checkbox" value="blend-frango" data-preco="5" />Blend frango 120g</label>
+                <span class="preco">R$ 6,00</span><br/>
+              </div>
+
+              
 
             </div>
             
@@ -456,8 +453,8 @@
             <div class="molhos">
               <label><input type="radio" name="molho" value="naoObrigado" required />Nenhum.</label>
               <label><input type="radio" name="molho" value="maionese" required />Maionese.</label>
-              <label><input type="radio" name="molho" value="ketchup" required />Maionese e Ketchup.</label>
-              <label><input type="radio" name="molho" value="mostarda" required />Maionese, Ketchup e Mostarda.</label>
+              <label><input type="radio" name="molho" value="Maionese e Ketchup" required />Maionese e Ketchup.</label>
+              <label><input type="radio" name="molho" value="Maionese, Ketchup e Mostarda" required />Maionese, Ketchup e Mostarda.</label>
             </div> 
           </fieldset>
 

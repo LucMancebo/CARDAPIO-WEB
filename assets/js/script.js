@@ -65,5 +65,4 @@
   window.addEventListener("DOMContentLoaded", () => {
     verificarStatus();
     configurarCategorias();
-  });
-  
+  })*/

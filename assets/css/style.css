@@ -817,6 +817,8 @@ textarea, input[type="text"] {
   outline: none;
 }
 
+
+
 /* Animação quando é habilitado */
 @keyframes habilitarCampo {
   from {
@@ -911,6 +913,20 @@ nav.categorias button::after {
 nav.categorias button:focus:not(:active)::after,
 .btn-adicionar:focus:not(:active)::after {
   animation: ripple 0.7s ease-out;
+}
+
+/*prooção*/
+
+.promotion{
+  font-weight: bold;
+  color:  #ffffff;
+  background-color: #00c853;
+  border-radius: 4px;
+  padding: 6px;
+
+  width: 112px;
+  
+  margin-top: -2px;
 }
 
 /* Animações */
