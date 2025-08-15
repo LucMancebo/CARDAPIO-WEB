@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (dia === 1) {
       aberto =
         (hora > 18 || (hora === 18 && minutos >= 0)) &&
-        (hora < 23 || (hora === 23 && minutos <= 30));
+        (hora < 4 || (hora === 24 && minutos <= 0));
     }
 
     if (statusLoja) {
@@ -259,16 +259,45 @@ document.addEventListener("DOMContentLoaded", function () {
   btnAdicionar.forEach((button) => {
     button.addEventListener("click", function () {
       const produtoCard = this.closest(".produto");
-      const categoria = this.dataset.categoria; // Adicione data-categoria nos seus botões
+      abrirModalAdicionais(produtoCard, this);
+    });
+  });
 
-      // Categorias que não devem abrir modal
-      const categoriasSemAdicionais = ["bebidas", "acai"];
+  //adicionar bebidas direto no carrinho sem abrir modal
+  document.querySelectorAll(".btn-adicionar-bebida").forEach((button) => {
+    button.addEventListener("click", function () {
+      // Pega o nome do produto do card, não do data attribute
+      const produtoCard = this.closest(".produto");
+      const nome = produtoCard ? produtoCard.querySelector("h3").textContent : this.getAttribute("data-nome");
+      const preco = parseFloat(this.getAttribute("data-preco"));
+      const nomeKey = this.getAttribute("data-nome");
 
-      if (categoriasSemAdicionais.includes(categoria)) {
-        adicionarDiretoAoCarrinho(produtoCard, this);
+      // Verifica se já existe bebida igual no carrinho
+      const itemExistenteIndex = carrinho.findIndex(
+        (item) => item.nomeKey === nomeKey && (!item.adicionais || item.adicionais.length === 0) && !item.molho
+      );
+
+      if (itemExistenteIndex >= 0) {
+        carrinho[itemExistenteIndex].quantidade++;
       } else {
-        abrirModalAdicionais(produtoCard, this);
+        carrinho.push({
+          nome,
+          nomeKey,
+          precoBase: preco,
+          precoTotal: preco,
+          quantidade: 1,
+          adicionais: [],
+          molho: "",
+          observacoes: "",
+        });
       }
+
+      localStorage.setItem("carrinho", JSON.stringify(carrinho));
+      atualizarCarrinho();
+
+      // Feedback visual
+      cartButton.classList.add("animate-bounce");
+      setTimeout(() => cartButton.classList.remove("animate-bounce"), 500);
     });
   });
 
@@ -469,19 +498,49 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    const totalFinal = total + taxaEntrega;
+   let totalFinal = total + taxaEntrega;
+
+   if (pagamentoSelect.value === "sodexo") {
+      // Adiciona 12% de taxa para pagamento com Sodexo
+      totalFinal *= 1.12;
+      total += total * 0.12; // Adiciona a taxa de 12% ao total
+    } 
+
+    //listener para atualizar o total quando o pagamento mudar
+    pagamentoSelect.addEventListener("change", function () {
+      if (this.value === "sodexo") {
+        totalFinal = (total + taxaEntrega) * 1.12; // Aplica 12% de taxa
+      } else {
+        totalFinal = total + taxaEntrega; // Remove a taxa se não for Sodexo
+      }
+      atualizarCarrinho(); // Atualiza a exibição do carrinho
+    });
 
     const totalElement = document.createElement("div");
     totalElement.className = "carrinho-total";
+    let taxaSodexo = 0;
+
+    if (pagamentoSelect.value === "sodexo") {
+      taxaSodexo = (total + taxaEntrega) * 0.12;
+    }
+
     totalElement.innerHTML = `
     <div class="container-total">
       <div class="total-container">
-        <span class="total-texto">Taxa:</span>
-        <span class="total-valor">${formatarPreco(taxaEntrega)}</span>
+      <span class="total-texto">Taxa:</span>
+      <span class="total-valor">${formatarPreco(taxaEntrega)}</span>
       </div>
+      ${
+      taxaSodexo > 0
+        ? `<div class="total-container">
+          <span class="total-texto">Taxa Sodexo (12%):</span>
+          <span class="total-valor">${formatarPreco(taxaSodexo)}</span>
+        </div>`
+        : ""
+      }
       <div class="total-container">
-        <span class="total-texto">Total:</span>
-        <span class="total-valor">${formatarPreco(totalFinal)}</span>
+      <span class="total-texto">Total:</span>
+      <span class="total-valor">${formatarPreco(totalFinal)}</span>
       </div>
     </div>`;
 
@@ -500,7 +559,6 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         enderecoTextarea.classList.remove("campo-desabilitado");
       }
-
       // Atualiza o carrinho
       atualizarCarrinho();
     });

@@ -273,7 +273,7 @@ main {
   gap: 8px; /* 8px */
 }
 
-.btn-adicionar {
+.btn-adicionar, .btn-adicionar-bebida {
   font-size: 28px;
   background-color: #28a745;
   color: #ffffff;
