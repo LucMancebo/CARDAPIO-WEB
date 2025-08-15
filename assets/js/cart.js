@@ -659,14 +659,21 @@ document.addEventListener("DOMContentLoaded", function () {
       subtotal += item.precoTotal * item.quantidade;
     });
 
-    // Calcula o total incluindo a taxa
-    const total = subtotal + taxaEntrega;
+    // Adiciona taxa Sodexo se necessário
+    let taxaSodexo = 0;
+    if (pagamento === "sodexo") {
+      taxaSodexo = subtotal * 0.12;
+      mensagem += `*Taxa Sodexo (12%): ${formatarPreco(taxaSodexo)}*\n`;
+    }
+
+    // Calcula o total incluindo taxa de entrega e Sodexo
+    const total = subtotal + taxaEntrega + taxaSodexo;
 
     // Adiciona totais e informações de entrega
     mensagem += "------------------------------------\n";
-    mensagem += `*TOTAL (inclui taxa de entrega): ${formatarPreco(total)}*\n`;
+    mensagem += `*TOTAL (inclui taxa de entrega${taxaSodexo > 0 ? " e Sodexo" : ""}): ${formatarPreco(total)}*\n`;
     mensagem += `*REGIÃO:* ${taxaSelecionada.text}\n`;
-    mensagem += `*ENDEREÇO:* ${endereco}\n`;
+    mensagem += `*ENDEREÇO:* ${isRetirada ? "Retirada no local" : endereco}\n`;
     mensagem += `*PAGAMENTO:* ${pagamento}\n\n`;
     mensagem += "Obrigado por pedir no ICARUS!\n";
 
