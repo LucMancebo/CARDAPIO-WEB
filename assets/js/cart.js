@@ -660,17 +660,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Adiciona taxa Sodexo se necessário
-    let taxaSodexo = 1; // 1 significa sem taxa
+    let taxaSodexo = 0;
     if (pagamento === "sodexo") {
-      taxaSodexo = 1.12; // 12% de taxa
+      taxaSodexo = (subtotal + taxaEntrega) * 0.12; // 12% de taxa
     }
 
     // Calcula o total incluindo taxa de entrega e Sodexo
-    const total = (subtotal + taxaEntrega) * taxaSodexo;
+    const total = subtotal + taxaEntrega + taxaSodexo;
 
     // Adiciona totais e informações de entrega
     mensagem += "------------------------------------\n";
-    mensagem += `*TOTAL (inclui taxa de entrega${taxaSodexo > 0 ? " e Sodexo" : ""}): ${formatarPreco(total)}*\n`;
+    mensagem += `Subtotal: ${formatarPreco(subtotal)}\n`;
+    mensagem += `Taxa de entrega: ${formatarPreco(taxaEntrega)}\n`;
+    if (taxaSodexo > 0) {
+      mensagem += `Taxa Sodexo (12%): ${formatarPreco(taxaSodexo)}\n`;
+    }
+    mensagem += `*TOTAL: ${formatarPreco(total)}*\n`;
     mensagem += `*REGIÃO:* ${taxaSelecionada.text}\n`;
     mensagem += `*ENDEREÇO:* ${isRetirada ? "Retirada no local" : endereco}\n`;
     mensagem += `*PAGAMENTO:* ${pagamento}\n\n`;
