@@ -662,7 +662,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Adiciona taxa Sodexo se necessário
     let taxaSodexo = 0;
     if (pagamento === "sodexo") {
-      taxaSodexo = 0.12;
+      taxaSodexo = 1.12; // 12% de taxa
     }
 
     // Calcula o total incluindo taxa de entrega e Sodexo
