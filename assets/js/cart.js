@@ -662,8 +662,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Adiciona taxa Sodexo se necessário
     let taxaSodexo = 0;
     if (pagamento === "sodexo") {
-      taxaSodexo = subtotal * 0.12;
-      mensagem += `*Taxa Sodexo (12%): ${formatarPreco(taxaSodexo)}*\n`;
+      taxaSodexo = 0.12;
     }
 
     // Calcula o total incluindo taxa de entrega e Sodexo
