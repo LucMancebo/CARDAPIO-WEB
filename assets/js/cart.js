@@ -660,7 +660,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Adiciona taxa Sodexo se necessário
-    let taxaSodexo = 0;
+    let taxaSodexo = 1; // 1 significa sem taxa
     if (pagamento === "sodexo") {
       taxaSodexo = 1.12; // 12% de taxa
     }
