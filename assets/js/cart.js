@@ -667,7 +667,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Calcula o total incluindo taxa de entrega e Sodexo
-    const total = subtotal + taxaEntrega + taxaSodexo;
+    const total = (subtotal + taxaEntrega) * taxaSodexo;
 
     // Adiciona totais e informações de entrega
     mensagem += "------------------------------------\n";
