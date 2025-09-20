@@ -11,9 +11,13 @@
 
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/toast.css">
   </head>
 
+
+  
   <body>
+    
     <!-- Header -->
     <header>
       
@@ -631,7 +635,7 @@
             <textarea name="observacoes"></textarea>
           </label>
 
-          <button type="submit" >Adicionar ao carrinho</button>
+          <button id="submit" type="submit" >Adicionar ao carrinho</button>
         </form>
       </div>
     </div>
@@ -687,6 +691,8 @@
       </div>
     </div>
 
+    <div id="toast" class="toast hidden">Produto adicionado</div>
+
     <!-- Rodapé -->
     <footer>
       <div class="card-footer">
@@ -697,6 +703,7 @@
       
     </footer>
 
+    <script src="assets/js/toast.js"></script>
     <script src="assets/js/cart.js"></script>
     <script src="assets/js/wow.min copy.js"></script>
   </body>

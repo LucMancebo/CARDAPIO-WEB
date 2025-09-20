@@ -34,10 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
       aberto = hora >= 18 && hora < 24;
     } else if (dia === 0) {
       aberto = hora >= 21 && hora < 24;
-    } else if (dia === 1) {
-      aberto =
-        (hora > 18 || (hora === 18 && minutos >= 0)) &&
-        (hora < 4 || (hora === 24 && minutos <= 0));
+    } else {
+      aberto = false;
     }
 
     if (statusLoja) {
@@ -135,7 +133,9 @@ document.addEventListener("DOMContentLoaded", function () {
       // Sua lógica de adicionar item aqui
       const nome = this.getAttribute("data-nome");
       const preco = this.getAttribute("data-preco");
+
       console.log(`Adicionado: ${nome} - R$${preco}`);
+
     });
 
   // Para os botões de navegação (mantendo seu estilo selecionado)
@@ -268,13 +268,18 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", function () {
       // Pega o nome do produto do card, não do data attribute
       const produtoCard = this.closest(".produto");
-      const nome = produtoCard ? produtoCard.querySelector("h3").textContent : this.getAttribute("data-nome");
+      const nome = produtoCard
+        ? produtoCard.querySelector("h3").textContent
+        : this.getAttribute("data-nome");
       const preco = parseFloat(this.getAttribute("data-preco"));
       const nomeKey = this.getAttribute("data-nome");
 
       // Verifica se já existe bebida igual no carrinho
       const itemExistenteIndex = carrinho.findIndex(
-        (item) => item.nomeKey === nomeKey && (!item.adicionais || item.adicionais.length === 0) && !item.molho
+        (item) =>
+          item.nomeKey === nomeKey &&
+          (!item.adicionais || item.adicionais.length === 0) &&
+          !item.molho
       );
 
       if (itemExistenteIndex >= 0) {
@@ -307,8 +312,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Se quiser animação no carrinho também, crie uma função similar
     modalCarrinho.classList.add("hidden");
   });
-
-  
 
   // Adicionar ao carrinho
   formAdicionais.addEventListener("submit", function (e) {
@@ -498,13 +501,13 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-   let totalFinal = total + taxaEntrega;
+    let totalFinal = total + taxaEntrega;
 
-   if (pagamentoSelect.value === "sodexo") {
+    if (pagamentoSelect.value === "sodexo") {
       // Adiciona 12% de taxa para pagamento com Sodexo
       totalFinal *= 1.12;
       total += total * 0.12; // Adiciona a taxa de 12% ao total
-    } 
+    }
 
     //listener para atualizar o total quando o pagamento mudar
     pagamentoSelect.addEventListener("change", function () {
@@ -531,12 +534,12 @@ document.addEventListener("DOMContentLoaded", function () {
       <span class="total-valor">${formatarPreco(taxaEntrega)}</span>
       </div>
       ${
-      taxaSodexo > 0
-        ? `<div class="total-container">
+        taxaSodexo > 0
+          ? `<div class="total-container">
           <span class="total-texto">Taxa Sodexo (12%):</span>
           <span class="total-valor">${formatarPreco(taxaSodexo)}</span>
         </div>`
-        : ""
+          : ""
       }
       <div class="total-container">
       <span class="total-texto">Total:</span>
