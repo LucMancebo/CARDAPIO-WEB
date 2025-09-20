@@ -17,6 +17,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const customAlert = document.getElementById("custom-alert");
   const alertMessage = document.getElementById("alert-message");
   const alertOkBtn = document.getElementById("alert-ok-btn");
+  // Este código deve estar no início do seu arquivo JS
+  const toast = document.getElementById("toast");
+  const modalButton = document.getElementById("cart-button"); // Supondo que você já tenha um ID para o seu botão do carrinho
+
+  function mostrarToast(mensagem) {
+    toast.textContent = mensagem;
+    toast.classList.remove("hidden");
+
+    setTimeout(() => {
+      toast.classList.add("hidden");
+    }, 3000);
+  }
 
   verificarStatus();
   configurarCategorias();
@@ -133,9 +145,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // Sua lógica de adicionar item aqui
       const nome = this.getAttribute("data-nome");
       const preco = this.getAttribute("data-preco");
-
-      console.log(`Adicionado: ${nome} - R$${preco}`);
-
     });
 
   // Para os botões de navegação (mantendo seu estilo selecionado)
@@ -368,6 +377,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Feedback visual
     cartButton.classList.add("animate-bounce");
     setTimeout(() => cartButton.classList.remove("animate-bounce"), 500);
+
+    const nomeProduto = produtoAtual.nome || "Produto"; // Pega o nome do objeto, use um nome padrão se não existir
+    mostrarToast(`${nomeProduto} adicionado ao carrinho!`);
   });
 
   // Abrir carrinho

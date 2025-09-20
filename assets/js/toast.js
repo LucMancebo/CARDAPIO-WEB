@@ -1,17 +1,19 @@
-const toast = document.getElementById("toast");
-const botaoAdicionar = document.getElementById("submit");
+document
+  .querySelectorAll(".btn-adicionar-bebida")
+  .forEach((button) => {
+    button.addEventListener("click", function () {
+      const produtoCard = this.closest(".produto");
+      const nome = produtoCard
+        ? produtoCard.querySelector("h3").textContent
+        : this.getAttribute("data-nome");
 
-function mostrarToast(mensagem) {
+      toast.textContent = `${nome} adicionado ao carrinho!`;
+      toast.classList.remove("hidden");
 
-  toast.textContent = mensagem;
+      setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 3000);
+    });
+  });
 
-  toast.classList.remove("hidden");
-
-  setTimeout(() => {
-    toast.classList.add("hidden");
-  }, 3000);
-}
-
-botaoAdicionar.addEventListener("click", (event) => {
-  mostrarToast("Produto adicionado ao carrinho!");
-});
+  document.querySelectorAll(".submit-modal")
