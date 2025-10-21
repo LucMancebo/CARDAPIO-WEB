@@ -29,4 +29,4 @@ O site conta com:
 🔗 **Repositório GitHub:** [github.com/LucMancebo/CARDAPIO-WEB](https://github.com/LucMancebo/CARDAPIO-WEB)
 
 📸 *Exemplo visual*  
-![Preview do Site](assets/images/preview.png)
+![Preview do Site](./assets/img/preview.png)
