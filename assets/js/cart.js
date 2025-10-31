@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 60000);
 
   // ----------------------------
-  // Categoria dinâmica (adaptado ao seu HTML)
+  // Categoria dinâmica 
   // ----------------------------
   function configurarCategorias() {
     const botoes = document.querySelectorAll(".categorias button");
